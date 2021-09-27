@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-plus-plus icon'></i>
+            <div class="logo_name">Logo</div>
+            <i class='bx bx-menu' id="ham-btn"></i>
+        </div>
+        <ul class="nav-list ps-0">
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">User</span>
+                </a>
+                <span class="tooltip">User</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Messages</span>
+                </a>
+                <span class="tooltip">Messages</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-phone'></i>
+                    <span class="links_name">Phone</span>
+                </a>
+                <span class="tooltip">Phone</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">File Manager</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="./images/User Picture.png" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Shahab Ali</div>
+                        <div class="job">Frontend Developer</div>
+                    </div>
+                </div>
+                <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <section class="main">
+        <!-- TOPBAR -->
+        <div class="container pt-4">
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-sm-12 pt-1">
+                    <div class="search position-relative w-75 mb-2">
+                        <input class="form-control w-100" type="search" placeholder="Search" aria-label="Search">
+                        <svg class="search-icon position-absolute" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                            <path
+                                d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-12 pt-2 d-flex justify-content-between">
+                    <div class="user d-flex mb-2">
+                        <div class="user__img">
+                            <img src="./images/user-1.jpg" alt="userImg" height="45" class="rounded-circle">
+                        </div>
+                        <div class="user__name pt-2 ps-3">
+                            <h6>Jhon Thomus</h6>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1);">
+                                <path
+                                    d="M21.546 11.646 19 9.101V5.5a.5.5 0 0 0-.5-.5h-3.601l-2.546-2.546a.5.5 0 0 0-.707 0L9.101 5H5.5a.5.5 0 0 0-.5.5v3.601l-2.546 2.546a.5.5 0 0 0 0 .707L5 14.899V18.5a.5.5 0 0 0 .5.5h3.601l2.546 2.546a.5.5 0 0 0 .707 0L14.899 19H18.5a.5.5 0 0 0 .5-.5v-3.601l2.546-2.546a.5.5 0 0 0 0-.707zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(0, 0, 0, 1);">
+                                <path
+                                    d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /TOPBAR -->
+
+        <!-- CONTENT -->
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <!-- ONLINE DOCTOR -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="card gradient-c radius-card">
+                                <div class="card-body">
+                                    <div class="online-doctor d-lg-flex d-md-flex justify-content-between">
+                                        <div class="online-docotr__content pt-5 mb-4">
+                                            <h5 class="fw-bold">Online Doctor Consultation</h5>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                            <button class="btn btn-online">Find a Doctor</button>
+                                        </div>
+                                        <div class="online-docotr__img text-center-sm" style="height: 200px;">
+                                            <img src="./images/Doctor.png" class="img-fluid" style="height: 100%;"
+                                                alt="docotr">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ONLINE DOCTOR -->
+
+                    <!-- CHAT -->
+                    <div class="row my-4">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="card radius-card shadow">
+                                <div class="card-body">
+                                    <h5 class="fw-bold pt-2">Doctor Online</h5>
+                                    <!-- CHAT BOX -->
+                                    <div class="chat-box my-4">
+                                        <!-- CHAT 1 -->
+                                        <div class="chat-box__1 chat-box__s mb-4 d-flex justify-content-between">
+                                            <div class="chatbot d-flex">
+                                                <div class="chat-box__user">
+                                                    <img src="./images/user-1.jpg" class="rounded-circle" height="50"
+                                                        alt="user">
+                                                </div>
+                                                <div class="chat-box__name pt-2 ps-2">
+                                                    <h6 class="mb-0 fw-bold">Roney Brawa</h6>
+                                                    <p class="mb-0 text-secondary">Surgeon</p>
+                                                </div>
+                                            </div>
+                                            <!-- ONHOVER -->
+                                            <div class="hover-icons pt-2">
+                                                <span class="hover-icons__m">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M8.586 18 12 21.414 15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3.586zM5 4h14v12h-4.414L12 18.586 9.414 16H5V4z">
+                                                            </path>
+                                                            <path
+                                                                d="m12.479 7.219-4.977 4.969v1.799h1.8l4.975-4.969zm2.219-2.22 1.8 1.8-1.37 1.37-1.8-1.799z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                                <span class="hover-icon__p">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="24" height="24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z">
+                                                            </path>
+                                                            <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                            </div>
+                                            <!-- /ONHOVER -->
+                                        </div>
+                                        <!-- /CHAT 1 -->
+                                        <hr class="mt-0">
+
+                                        <!-- CHAT 2 -->
+                                        <div class="chat-box__2 chat-box__s mb-4 d-flex justify-content-between">
+                                            <div class="chatbot d-flex">
+                                                <div class="chat-box__user">
+                                                    <img src="./images/user-2.jpg" class="rounded-circle" height="50"
+                                                        alt="user">
+                                                </div>
+                                                <div class="chat-box__name pt-2 ps-2">
+                                                    <h6 class="mb-0 fw-bold">Jhon Doe</h6>
+                                                    <p class="mb-0 text-secondary">Dentist</p>
+                                                </div>
+                                            </div>
+                                            <!-- ONHOVER -->
+                                            <div class="hover-icons pt-2">
+                                                <span class="hover-icons__m">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M8.586 18 12 21.414 15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3.586zM5 4h14v12h-4.414L12 18.586 9.414 16H5V4z">
+                                                            </path>
+                                                            <path
+                                                                d="m12.479 7.219-4.977 4.969v1.799h1.8l4.975-4.969zm2.219-2.22 1.8 1.8-1.37 1.37-1.8-1.799z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                                <span class="hover-icon__p">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="24" height="24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z">
+                                                            </path>
+                                                            <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                            </div>
+                                            <!-- /ONHOVER -->
+                                        </div>
+                                        <!-- /CHAT 2 -->
+                                        <hr class="mt-0">
+
+                                        <!-- CHAT 3 -->
+                                        <div class="chat-box__3 chat-box__s mb-4 d-flex justify-content-between">
+                                            <div class="chatbot d-flex">
+                                                <div class="chat-box__user">
+                                                    <img src="./images/user-3.jpg" class="rounded-circle" height="50"
+                                                        alt="user">
+                                                </div>
+                                                <div class="chat-box__name pt-2 ps-2">
+                                                    <h6 class="mb-0 fw-bold">Michal Merry</h6>
+                                                    <p class="mb-0 text-secondary">Urologist</p>
+                                                </div>
+                                            </div>
+                                            <!-- ONHOVER -->
+                                            <div class="hover-icons pt-2">
+                                                <span class="hover-icons__m">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M8.586 18 12 21.414 15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3.586zM5 4h14v12h-4.414L12 18.586 9.414 16H5V4z">
+                                                            </path>
+                                                            <path
+                                                                d="m12.479 7.219-4.977 4.969v1.799h1.8l4.975-4.969zm2.219-2.22 1.8 1.8-1.37 1.37-1.8-1.799z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                                <span class="hover-icon__p">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="24" height="24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z">
+                                                            </path>
+                                                            <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                            </div>
+                                            <!-- /ONHOVER -->
+                                        </div>
+                                        <!-- /CHAT 3 -->
+                                        <hr class="mt-0">
+
+                                        <!-- CHAT 4 -->
+                                        <div class="chat-box__4 chat-box__s mb-4 d-flex justify-content-between">
+                                            <div class="chatbot d-flex">
+                                                <div class="chat-box__user">
+                                                    <img src="./images/user-4.jpg" class="rounded-circle" height="50"
+                                                        alt="user">
+                                                </div>
+                                                <div class="chat-box__name pt-2 ps-2">
+                                                    <h6 class="mb-0 fw-bold">Glory Gill</h6>
+                                                    <p class="mb-0 text-secondary">Surgeon</p>
+                                                </div>
+                                            </div>
+                                            <!-- ONHOVER -->
+                                            <div class="hover-icons pt-2">
+                                                <span class="hover-icons__m">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M8.586 18 12 21.414 15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3.586zM5 4h14v12h-4.414L12 18.586 9.414 16H5V4z">
+                                                            </path>
+                                                            <path
+                                                                d="m12.479 7.219-4.977 4.969v1.799h1.8l4.975-4.969zm2.219-2.22 1.8 1.8-1.37 1.37-1.8-1.799z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                                <span class="hover-icon__p">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="24" height="24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z">
+                                                            </path>
+                                                            <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                            </div>
+                                            <!-- /ONHOVER -->
+                                        </div>
+                                        <!-- /CHAT 4 -->
+                                        <hr class="mt-0">
+
+                                        <!-- CHAT 5 -->
+                                        <div class="chat-box__4 chat-box__s mb-4 d-flex justify-content-between">
+                                            <div class="chatbot d-flex">
+                                                <div class="chat-box__user">
+                                                    <img src="./images/user-4.jpg" class="rounded-circle" height="50"
+                                                        alt="user">
+                                                </div>
+                                                <div class="chat-box__name pt-2 ps-2">
+                                                    <h6 class="mb-0 fw-bold">Tommy Jhin</h6>
+                                                    <p class="mb-0 text-secondary">Dentist</p>
+                                                </div>
+                                            </div>
+                                            <!-- ONHOVER -->
+                                            <div class="hover-icons pt-2">
+                                                <span class="hover-icons__m">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M8.586 18 12 21.414 15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h3.586zM5 4h14v12h-4.414L12 18.586 9.414 16H5V4z">
+                                                            </path>
+                                                            <path
+                                                                d="m12.479 7.219-4.977 4.969v1.799h1.8l4.975-4.969zm2.219-2.22 1.8 1.8-1.37 1.37-1.8-1.799z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                                <span class="hover-icon__p">
+                                                    <a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="24" height="24"
+                                                            style="fill: rgba(0, 0, 0, 1);">
+                                                            <path
+                                                                d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z">
+                                                            </path>
+                                                            <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+
+                                            </div>
+                                            <!-- /ONHOVER -->
+                                        </div>
+                                        <!-- /CHAT 5 -->
+                                        <hr class="mt-0">
+                                    </div>
+                                    <!-- /CHAT BOX -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <!-- DOUNUT CHART -->
+                            <div class="card shadow radius-card mb-3">
+                                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0 fw-bold">Vitamins</h5>
+                                    <p class="text-secondary">Expand</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="pieChart mx-auto" id="chartContainer"
+                                        style="height: 180px; width: 90%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /DOUNUT CHART -->
+
+                            <!-- LINE CHART -->
+                            <div class="card shadow radius-card">
+                                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0 fw-bold">Water Balance</h5>
+                                    <p class="text-secondary">Expand</p>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /LINE CHART -->
+                        </div>
+                    </div>
+                    <!-- /CHAT -->
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="find">
+                        <h5 class="fw-bold">Find Specialist</h5>
+                        <p class="text-secondary">Chose ypur category</p>
+                    </div>
+                    <!-- CARDS -->
+                    <div class="cards">
+                        <!-- CARD 1 -->
+                        <div class="card radius-card shadow mb-3">
+                            <div class="card-body dentist d-flex">
+                                <div class="dentist__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div class="dentist__content ps-2">
+                                    <h6 class="fw-bold mb-0">Dentist</h6>
+                                    <p class="text-secondary mb-0">90 Availabe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /CARD 1 -->
+
+                        <!-- CARD 2 -->
+                        <div class="card radius-card shadow mb-3">
+                            <div class="card-body dentist d-flex">
+                                <div class="dentist__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div class="dentist__content ps-2">
+                                    <h6 class="fw-bold mb-0">Orthopedist</h6>
+                                    <p class="text-secondary mb-0">90 Availabe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /CARD 2 -->
+
+                        <!-- CARD 3 -->
+                        <div class="card radius-card shadow mb-3">
+                            <div class="card-body dentist d-flex">
+                                <div class="dentist__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div class="dentist__content ps-2">
+                                    <h6 class="fw-bold mb-0">Surgeon</h6>
+                                    <p class="text-secondary mb-0">90 Availabe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /CARD 3 -->
+
+                        <!-- CARD 4 -->
+                        <div class="card radius-card shadow mb-3">
+                            <div class="card-body dentist d-flex">
+                                <div class="dentist__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div class="dentist__content ps-2">
+                                    <h6 class="fw-bold mb-0">Generel physician</h6>
+                                    <p class="text-secondary mb-0">90 Availabe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /CARD 4 -->
+
+                        <!-- CARD 5 -->
+                        <div class="card radius-card shadow mb-3">
+                            <div class="card-body dentist d-flex">
+                                <div class="dentist__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="12" cy="7" r="4" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </div>
+                                <div class="dentist__content ps-2">
+                                    <h6 class="fw-bold mb-0">Generel physician</h6>
+                                    <p class="text-secondary mb-0">90 Availabe</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /CARD 5 -->
+                        <!-- /CARDS -->
+                    </div>
+
+                    <!-- CREDIT CARD -->
+                    <div class="card shadow gradient-c radius-card">
+                        <div class="card-body">
+                            <div class="credit__content text-center">
+                                <h5 class="fw-bold text-capitalize">Doctor. Health credit card</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet adipisicing elit. Error,
+                                    doloremque?</p>
+                            </div>
+
+                            <div class="credit__img text-center">
+                                <img src="./images/card.jpg" alt="card" class="img-fluid" width="75%"
+                                    style="border-radius:.625rem">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /CREDIT CARD -->
+                </div>
+            </div>
+        </div>
+        <!-- /CONTENT -->
+    </section>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="./js/Chart.min.js"></script>
+    <script src="./js/chart-area-demo.js"></script>
+    <script src="./js/donutChart.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
